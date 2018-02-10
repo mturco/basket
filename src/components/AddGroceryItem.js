@@ -20,6 +20,7 @@ export default class AddGroceryItem extends Component {
           <input
             type="text"
             name="name"
+            ref={input => this.nameInput = input}
             className="AddGroceryItem-nameInput FormInput"
             placeholder="Add item"
             value={this.state.name}
@@ -52,6 +53,7 @@ export default class AddGroceryItem extends Component {
     e.preventDefault();
     this.props.handleSubmit(this.state.name, this.state.qty);
     this.reset();
+    this.nameInput.focus();
   }
 
   reset() {
