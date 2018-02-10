@@ -13,6 +13,9 @@ export default class GroceryList extends Component {
     return (
       <div className="GroceryList">
         <h1 className="GroceryList-title">{this.props.title}</h1>
+        {!this.props.list.length &&
+          <p className="GroceryList-emptyMessage">Nothing in your {this.props.title.toLowerCase()} yet.</p>
+        }
         {items}
       </div>
     );

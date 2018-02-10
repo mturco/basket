@@ -24,17 +24,22 @@ export default class App extends Component {
         <AppHeader/>
         <div className="App-container">
           <AddGroceryItem handleSubmit={this.addItem}/>
+
           <GroceryList
             title="Shopping list"
             list={this.state.items.filter(item => !item.picked)}
             checkIfPicked={false}
             handleItemChange={this.handleItemChange.bind(this, true)}/>
+          
           <GroceryList
-            title="In your basket"
+            title="Basket"
             list={this.state.items.filter(item => item.picked)}
             checkIfPicked={true}
             handleItemChange={this.handleItemChange.bind(this, false)}/>
-          <button onClick={this.clearBasket}>Clear basket</button>
+          
+          {this.state.items.filter(item => item.picked).length > 0 &&
+            <button onClick={this.clearBasket}>Clear basket</button>
+          }
         </div>
       </div>
     );
