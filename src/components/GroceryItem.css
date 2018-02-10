@@ -4,10 +4,13 @@
 .GroceryItem:hover {
   background-color: #f5f5f5;
 }
+.GroceryItem-label,
+.GroceryItem-checkbox {
+  cursor: pointer;
+}
 .GroceryItem-label {
   padding: 5px;
   flex: 1 0 auto;
-  cursor: pointer;
 }
 .GroceryItem-checkbox {
   margin-right: 10px;
