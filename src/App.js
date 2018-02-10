@@ -67,9 +67,14 @@ export default class App extends Component {
   }
 
   addItem(name, qty) {
-    this.setState({
-      items: [...this.state.items, new GroceryItemModel(name, qty)],
-    });
+    let items = this.state.items.slice();
+    const duplicate = items.find(item => item.name.toLowerCase() === name.toLowerCase() && !item.picked);
+    if (duplicate) {
+      duplicate.qty += parseInt(qty, 10);
+    } else {
+      items.push(new GroceryItemModel(name, parseInt(qty, 10)));
+    }
+    this.setState({ items });
   }
 
   handleItemChange(pick, id) {
