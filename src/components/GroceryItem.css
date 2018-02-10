@@ -16,3 +16,6 @@
 .GroceryItem-qty {
   margin-left: 5px;
 }
+.GroceryItem--picked .GroceryItem-name {
+  text-decoration: line-through;
+}
