@@ -5,12 +5,24 @@ import GroceryList from './components/GroceryList';
 import GroceryItemModel from './models/GroceryItemModel';
 import './App.css';
 
+const SAVED_ITEMS = 'savedItems';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      items: [],
-    };
+    let items = [];
+
+    // Check for saved items from a previous session
+    if (window.localStorage.getItem(SAVED_ITEMS)) {
+      try {
+        items = JSON.parse(window.localStorage.getItem(SAVED_ITEMS));
+      } catch(e) {
+        // Must be corrupted, clear for next time
+        window.localStorage.removeItem(SAVED_ITEMS);
+      }
+    }
+
+    this.state = { items };
 
     // bind `this` for handlers
     this.addItem = this.addItem.bind(this);
@@ -43,6 +55,15 @@ export default class App extends Component {
         </div>
       </div>
     );
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    try {
+      const list = JSON.stringify(nextState.items);
+      window.localStorage.setItem(SAVED_ITEMS, list);
+    } catch(e) {
+      // Do nothing
+    }
   }
 
   addItem(name, qty) {
