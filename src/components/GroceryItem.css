@@ -10,7 +10,7 @@
 }
 .GroceryItem-label {
   padding: 5px;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }
 .GroceryItem-checkbox {
   margin-right: 10px;
