@@ -20,6 +20,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 .Button:hover,
 .Button:focus {
@@ -28,6 +29,7 @@ html {
 .Button:disabled {
   background-color: #bbb;
   box-shadow: none;
+  cursor: default;
 }
 .FormInput {
   padding: 5px 0;
