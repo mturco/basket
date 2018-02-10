@@ -15,6 +15,7 @@ export default class App extends Component {
     // bind `this` for handlers
     this.addItem = this.addItem.bind(this);
     this.handleItemChange = this.handleItemChange.bind(this);
+    this.clearBasket = this.clearBasket.bind(this);
   }
 
   render() {
@@ -33,6 +34,7 @@ export default class App extends Component {
             list={this.state.items.filter(item => item.picked)}
             checkIfPicked={true}
             handleItemChange={this.handleItemChange.bind(this, false)}/>
+          <button onClick={this.clearBasket}>Clear basket</button>
         </div>
       </div>
     );
@@ -51,5 +53,10 @@ export default class App extends Component {
       item.picked = pick;
       this.setState({ items });
     }
+  }
+
+  clearBasket() {
+    const items = this.state.items.slice();
+    this.setState({ items: items.filter(item => !item.picked) });
   }
 }
