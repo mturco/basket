@@ -4,9 +4,13 @@
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0 30px;
+  padding: 0 20px;
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #ddd;
+
+  @media (min-width: 480px) {
+    padding: 0 30px;
+  }
   
   &-brand {
     display: block;

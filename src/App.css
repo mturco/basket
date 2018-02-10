@@ -7,7 +7,12 @@ html {
   font: 16px Roboto, sans-serif;
 }
 .App-container {
-  padding: 0 30px;
+  padding: 0 20px;
+}
+@media (min-width: 480px) {
+  .App-container {
+    padding: 0 30px;
+  }
 }
 .Button {
   padding: 8px 15px;
