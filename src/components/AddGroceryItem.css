@@ -1,0 +1,11 @@
+.AddGroceryItem-nameInput,
+.AddGroceryItem-qtyInput {
+  margin-right: 20px;
+}
+.AddGroceryItem-nameInput {
+  width: 200px;
+}
+.AddGroceryItem-qtyInput {
+  width: 4ch;
+  margin-left: 10px;
+}
