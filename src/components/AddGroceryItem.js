@@ -19,7 +19,7 @@ export default class AddGroceryItem extends Component {
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="name" className="AddGroceryItem-nameInput" value={this.state.name} onChange={this.handleChange}/>
           <input type="number" name="qty" className="AddGroceryItem-qtyInput" value={this.state.qty} onChange={this.handleChange}/>
-          <input type="submit" value="Add"/>
+          <input type="submit" value="Add" disabled={!this.state.name.trim().length}/>
         </form>
       </div>
     );
