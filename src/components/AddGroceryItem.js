@@ -17,9 +17,25 @@ export default class AddGroceryItem extends Component {
     return (
       <div className="AddGroceryItem">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="name" className="AddGroceryItem-nameInput" value={this.state.name} onChange={this.handleChange}/>
-          <input type="number" name="qty" className="AddGroceryItem-qtyInput" value={this.state.qty} onChange={this.handleChange}/>
-          <input type="submit" value="Add" disabled={!this.state.name.trim().length}/>
+          <input
+            type="text"
+            name="name"
+            className="AddGroceryItem-nameInput FormInput"
+            placeholder="Add item"
+            value={this.state.name}
+            onChange={this.handleChange}/>
+
+          <label>
+            <span>qty:</span>
+            <input
+              type="number"
+              name="qty"
+              className="AddGroceryItem-qtyInput FormInput"
+              value={this.state.qty}
+              onChange={this.handleChange}/>
+          </label>
+
+          <input type="submit" value="Add" className="Button" disabled={!this.state.name.trim().length}/>
         </form>
       </div>
     );

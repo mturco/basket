@@ -38,7 +38,7 @@ export default class App extends Component {
             handleItemChange={this.handleItemChange.bind(this, false)}/>
           
           {this.state.items.filter(item => item.picked).length > 0 &&
-            <button onClick={this.clearBasket}>Clear basket</button>
+            <button className="Button" onClick={this.clearBasket}>Clear basket</button>
           }
         </div>
       </div>
