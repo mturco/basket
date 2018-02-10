@@ -33,6 +33,8 @@ export default class AddGroceryItem extends Component {
               name="qty"
               className="AddGroceryItem-qtyInput FormInput"
               value={this.state.qty}
+              min="1"
+              step="1"
               onChange={this.handleChange}/>
           </label>
 
