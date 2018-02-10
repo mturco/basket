@@ -1,0 +1,18 @@
+.GroceryItem {
+  display: flex;
+}
+.GroceryItem:hover {
+  background-color: #f5f5f5;
+}
+.GroceryItem-label {
+  padding: 5px;
+  flex: 1 0 auto;
+  cursor: pointer;
+}
+.GroceryItem-checkbox {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.GroceryItem-qty {
+  margin-left: 5px;
+}
