@@ -5,7 +5,7 @@ export default class AppHeader extends Component {
   render() {
     return (
       <div className="AppHeader">
-        <div className="AppHeader-brand">Basket</div>
+        <a href="/" className="AppHeader-brand">Basket</a>
       </div>
     );
   }
