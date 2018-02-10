@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppHeader from './components/AppHeader';
+import AddGroceryItem from './components/AddGroceryItem';
 import GroceryList from './components/GroceryList';
 import GroceryItemModel from './models/GroceryItemModel';
 import './App.css';
@@ -8,13 +9,11 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [
-        new GroceryItemModel('Eggs', 3),
-        new GroceryItemModel('Bacon', 1),
-      ],
+      items: [],
     };
 
     // bind `this` for handlers
+    this.addItem = this.addItem.bind(this);
     this.handleItemChange = this.handleItemChange.bind(this);
   }
 
@@ -23,6 +22,7 @@ export default class App extends Component {
       <div className="App">
         <AppHeader/>
         <div className="App-container">
+          <AddGroceryItem handleSubmit={this.addItem}/>
           <GroceryList
             title="Shopping list"
             list={this.state.items.filter(item => !item.picked)}
@@ -36,6 +36,12 @@ export default class App extends Component {
         </div>
       </div>
     );
+  }
+
+  addItem(name, qty) {
+    this.setState({
+      items: [...this.state.items, new GroceryItemModel(name, qty)],
+    });
   }
 
   handleItemChange(pick, id) {
