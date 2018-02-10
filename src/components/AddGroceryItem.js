@@ -23,6 +23,7 @@ export default class AddGroceryItem extends Component {
             className="AddGroceryItem-nameInput FormInput"
             placeholder="Add item"
             value={this.state.name}
+            autoComplete="off"
             onChange={this.handleChange}/>
 
           <label>
