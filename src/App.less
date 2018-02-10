@@ -10,7 +10,7 @@ html {
 
 .App {
   &-container {
-    padding: 30px;
+    padding: 0 30px;
   }
 }
 
@@ -45,5 +45,13 @@ html {
   &:focus {
     outline: 0;
     border-color: #ff5c61;
+  }
+}
+
+// Some basic styles to improve printed display
+@media print {
+  .AddGroceryItem,
+  .Button {
+    display: none;
   }
 }

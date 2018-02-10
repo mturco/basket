@@ -7,7 +7,7 @@ html {
   font: 16px Roboto, sans-serif;
 }
 .App-container {
-  padding: 30px;
+  padding: 0 30px;
 }
 .Button {
   padding: 8px 15px;
@@ -37,4 +37,10 @@ html {
 .FormInput:focus {
   outline: 0;
   border-color: #ff5c61;
+}
+@media print {
+  .AddGroceryItem,
+  .Button {
+    display: none;
+  }
 }
