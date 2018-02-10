@@ -1,0 +1,11 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font: 16px Roboto, sans-serif;
+}
+.App-container {
+  padding: 20px;
+}
